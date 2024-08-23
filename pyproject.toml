@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "llama3_8b_instruct_text_to_sql"
+version = "0.1.0"
+description = "Fine tune a Llama3-8b-instruct model to be a text to SQL agent."
+authors = ["Emad Dehnavi <dehnavi@gmx.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+lamini = "^3.0.5"
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "llama3_8b_instruct_text_to_sql.main:start"
